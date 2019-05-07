@@ -1,4 +1,4 @@
-/// Copyright by Syntacore LLC Â© 2016-2018. See LICENSE for details
+/// Copyright by Syntacore LLC © 2016-2018. See LICENSE for details
 /// @file       <scr1_pipe_ialu.sv>
 /// @brief      Integer Arithmetic Logic Unit (IALU)
 ///

@@ -1,6 +1,6 @@
 `ifndef SCR1_RISCV_ISA_DECODING_SVH
 `define SCR1_RISCV_ISA_DECODING_SVH
-/// Copyright by Syntacore LLC Â© 2016-2018. See LICENSE for details
+/// Copyright by Syntacore LLC © 2016-2018. See LICENSE for details
 /// @file       <scr1_riscv_isa_decoding.svh>
 /// @brief      RISC-V ISA definitions file
 ///
@@ -32,7 +32,8 @@ typedef enum logic [6:2] {
     SCR1_OPCODE_BRANCH      = 5'b11000,
     SCR1_OPCODE_JALR        = 5'b11001,
     SCR1_OPCODE_JAL         = 5'b11011,
-    SCR1_OPCODE_SYSTEM      = 5'b11100
+    SCR1_OPCODE_SYSTEM      = 5'b11100,
+    SCR1_OPCODE_CUSTOM_ADDIU      = 5'b00010
 } type_scr1_rvi_opcode_e;
 
 
@@ -70,7 +71,8 @@ typedef enum logic [SCR1_IALU_CMD_WIDTH_E-1:0] {
     SCR1_IALU_CMD_SUB_GEU,      // op1 u>= op2
     SCR1_IALU_CMD_SLL,          // op1 << op2
     SCR1_IALU_CMD_SRL,          // op1 >> op2
-    SCR1_IALU_CMD_SRA           // op1 >>> op2
+    SCR1_IALU_CMD_SRA,          // op1 >>> op2
+    SCR1_IALU_CMD_ADDIU         // op1 u+ op2
 `ifdef SCR1_RVM_EXT
     ,
     SCR1_IALU_CMD_MUL,          // low(unsig(op1) * unsig(op2))

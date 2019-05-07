@@ -1,4 +1,4 @@
-/// Copyright by Syntacore LLC Â© 2016-2018. See LICENSE for details
+/// Copyright by Syntacore LLC © 2016-2018. See LICENSE for details
 /// @file       <scr1_pipe_idu.sv>
 /// @brief      Instruction Decoder Unit (IDU)
 ///
@@ -445,6 +445,22 @@ always_comb begin
                             default : rvi_illegal = 1'b1;
                         endcase // funct3
                     end // SCR1_OPCODE_SYSTEM
+
+                    SCR1_OPCODE_CUSTOM_ADDIU          : begin
+                        idu2exu_use_rs1         = 1'b1;
+                        idu2exu_use_rd          = 1'b1;
+                        idu2exu_use_imm         = 1'b1;
+                        idu2exu_cmd.imm         = instr[31:20];
+                        idu2exu_cmd.ialu_op     = SCR1_IALU_OP_REG_IMM;
+                        idu2exu_cmd.rd_wb_sel   = SCR1_RD_WB_IALU;
+                        case (funct3)
+                            3'b000  : idu2exu_cmd.ialu_cmd  = SCR1_IALU_CMD_ADD;        // ADDIU
+                        endcase // funct3
+`ifdef SCR1_RVE_EXT
+                        if (instr[11] | instr[19])  rve_illegal = 1'b1;
+`endif  // SCR1_RVE_EXT
+                    end // SCR1_OPCODE_CUSTOM_ADDIU
+
 
                     default : begin
                         rvi_illegal = 1'b1;

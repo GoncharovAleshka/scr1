@@ -1,6 +1,6 @@
 `ifndef SCR1_ARCH_DESCRIPTION_SVH
 `define SCR1_ARCH_DESCRIPTION_SVH
-/// Copyright by Syntacore LLC Â© 2016-2019. See LICENSE for details
+/// Copyright by Syntacore LLC © 2016-2019. See LICENSE for details
 /// @file       <scr1_arch_description.svh>
 /// @brief      Architecture description file
 ///
@@ -36,8 +36,8 @@ parameter int unsigned          SCR1_CSR_MTVEC_BASE_VAL_BITS    = `SCR1_XLEN-SCR
   `define SCR1_RVE_EXT
   `undef  SCR1_RVM_EXT
   `define SCR1_RVC_EXT
-  `define SCR1_IFU_QUEUE_BYPASS
-  `undef  SCR1_EXU_STAGE_BYPASS
+  `undef SCR1_IFU_QUEUE_BYPASS
+  `define SCR1_EXU_STAGE_BYPASS
   `undef  SCR1_CLKCTRL_EN
   `undef  SCR1_VECT_IRQ_EN
   `undef  SCR1_CSR_MCOUNTEN_EN
@@ -47,7 +47,7 @@ parameter int unsigned          SCR1_CSR_MTVEC_BASE_VAL_BITS    = `SCR1_XLEN-SCR
   `undef  SCR1_RVE_EXT
   `undef  SCR1_RVM_EXT
   `define SCR1_RVC_EXT
-  `define SCR1_IFU_QUEUE_BYPASS
+  `undef SCR1_IFU_QUEUE_BYPASS
   `define SCR1_EXU_STAGE_BYPASS
   `undef  SCR1_CLKCTRL_EN
   `define SCR1_VECT_IRQ_EN
@@ -57,7 +57,7 @@ parameter int unsigned          SCR1_CSR_MTVEC_BASE_VAL_BITS    = `SCR1_XLEN-SCR
   `undef  SCR1_RVE_EXT
   `define SCR1_RVM_EXT
   `define SCR1_RVC_EXT
-  `define SCR1_IFU_QUEUE_BYPASS
+  `undef SCR1_IFU_QUEUE_BYPASS
   `define SCR1_EXU_STAGE_BYPASS
   `define SCR1_FAST_MUL
   `undef  SCR1_CLKCTRL_EN
@@ -76,7 +76,7 @@ parameter int unsigned          SCR1_CSR_MTVEC_BASE_VAL_BITS    = `SCR1_XLEN-SCR
   `define SCR1_RVM_EXT                // enables standard extension for integer mul/div
   `define SCR1_RVC_EXT                // enables standard extension for compressed instructions
 
-  `define SCR1_IFU_QUEUE_BYPASS       // enables bypass between IFU and IDU stages
+  `undef SCR1_IFU_QUEUE_BYPASS       // enables bypass between IFU and IDU stages
   `define SCR1_EXU_STAGE_BYPASS       // enables bypass between IDU and EXU stages
 
   `define SCR1_FAST_MUL               // enables one-cycle multiplication

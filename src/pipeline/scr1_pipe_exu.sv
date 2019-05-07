@@ -1,4 +1,4 @@
-/// Copyright by Syntacore LLC Â© 2016-2019. See LICENSE for details
+/// Copyright by Syntacore LLC © 2016-2019. See LICENSE for details
 /// @file       <scr1_pipe_exu.sv>
 /// @brief      Execution Unit (EXU)
 ///
